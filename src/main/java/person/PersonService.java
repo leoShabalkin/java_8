@@ -1,5 +1,7 @@
 package person;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
@@ -9,6 +11,7 @@ import java.util.function.UnaryOperator;
  * Created by Leonid_Shabalkin on 29/9/2016.
  */
 public class PersonService {
+
     public static void sortByName(List<Person> persons) {
         persons.sort((p1, p2) -> p1.name.compareTo(p2.name));
     }
@@ -18,13 +21,7 @@ public class PersonService {
     }
 
     public static void supplier(final List<Person> persons) {
-        persons.forEach((p) -> {
-            printNames(() -> p);
-        });
-    }
-
-    private static void printNames(Supplier arg) {
-        System.out.println(arg.get());
+        persons.stream().map(Person::getName).forEach(System.out::println);
     }
 
     public static void consumer(List<Person> persons) {
