@@ -1,3 +1,5 @@
+package person;
+
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
@@ -16,8 +18,8 @@ public class PersonService {
     }
 
     public static void supplier(final List<Person> persons) {
-        persons.forEach((x) -> {
-            printNames(() -> x);
+        persons.forEach((p) -> {
+            printNames(() -> p);
         });
     }
 

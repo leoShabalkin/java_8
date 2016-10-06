@@ -1,3 +1,5 @@
+package person;
+
 /**
  * Created by Leonid_Shabalkin on 27/9/2016.
  */

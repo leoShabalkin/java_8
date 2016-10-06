@@ -1,6 +1,7 @@
-import functional.*;
+package functional;
 
 import org.apache.commons.lang.math.NumberUtils;
+
 import java.math.BigDecimal;
 
 /**
