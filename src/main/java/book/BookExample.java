@@ -22,11 +22,11 @@ public class BookExample {
 
         System.out.println("Max number of pages Book:");
         Optional<Book> maxBook = Arrays.stream(mybooks).max(getComporator());
-        System.out.println(maxBook.isPresent() ? maxBook.get().toString() : "Not found");
+        System.out.println(maxBook.map(Book::toString).orElse("Not found"));
 
         System.out.println("Min number of pages Book:");
         Optional<Book> minBook = Arrays.stream(mybooks).min(getComporator());
-        System.out.println(minBook.isPresent() ? minBook.get().toString() : "Not found");
+        System.out.println(minBook.map(Book::toString).orElse("Not found"));
 
         System.out.println("Book single author:");
         Arrays.stream(mybooks).filter(b -> b.authors.size() == 1).forEach(System.out::println);
@@ -46,11 +46,11 @@ public class BookExample {
 
         System.out.println("Max number of pages Book:");
         Optional<Book> maxBookParallel = bookList.parallelStream().max(getComporator());
-        System.out.println(maxBookParallel.isPresent() ? maxBookParallel.get().toString() : "Not found");
+        System.out.println(maxBookParallel.map(Book::toString).orElse("Not found"));
 
         System.out.println("Min number of pages Book:");
         Optional<Book> minBookParallel = bookList.parallelStream().min(getComporator());
-        System.out.println(minBookParallel.isPresent() ? minBookParallel.get().toString() : "Not found");
+        System.out.println(minBookParallel.map(Book::toString).orElse("Not found"));
 
         System.out.println("Book single author:");
         bookList.parallelStream().filter(b -> b.authors.size() == 1).forEach(System.out::println);
