@@ -9,11 +9,13 @@ import java.util.function.*;
 public class PersonService {
 
     public static void sortByName(List<Person> persons) {
-        persons.sort((p1, p2) -> p1.name.compareTo(p2.name));
+        persons.sort((p1, p2) -> p1.name.compareToIgnoreCase(p2.name));
+        persons.forEach(System.out::println);
     }
 
     public static void sortByAge(List<Person> persons) {
         persons.sort((p1, p2) -> p1.age.compareTo(p2.age));
+        persons.forEach(System.out::println);
     }
 
     public static void supplier(final List<Person> persons) {
