@@ -13,6 +13,9 @@ public class FunctionalExample {
         SampleInterface sampleInterface = (name) -> System.out.println("Hello, " + name);
         sampleInterface.say("Test");
 
+        SampleInterfaceSay sampleInterfaceSay=(name)->System.out.println("Hello, " + name);
+        sampleInterfaceSay.saySimple("Test");
+
         // is number
         IsNumberInterface isNumberInterface = NumberUtils::isNumber;
         System.out.println(isNumberInterface.check("0"));
