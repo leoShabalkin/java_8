@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public class FunctionalExample {
     public static void main(String[] args) {
         // sample
-        SampleInterface sampleInterface = (String name) -> System.out.println("Hello, " + name);
+        SampleInterface sampleInterface = (name) -> System.out.println("Hello, " + name);
         sampleInterface.say("Test");
 
         // is number
