@@ -19,7 +19,7 @@ public class PersonService {
     }
 
     public static void supplier(final List<Person> persons) {
-        persons.forEach((p)->printNames(() -> p));
+        persons.forEach(p->printNames(p::getName));
     }
 
     private static void printNames(Supplier arg) {
