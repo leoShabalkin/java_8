@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 @FunctionalInterface
 public interface CalcInterface extends MathInterface {
    default BigDecimal calc(BigDecimal value1, BigDecimal value2) {
-       if (!isNull(value1)){
+       if (isNull(value1)){
            return BigDecimal.ZERO;
        }
        return value1.multiply(value2);
